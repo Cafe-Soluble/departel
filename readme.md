@@ -4,12 +4,11 @@ Départel est une application web Flask qui convertit les numéros de téléphon
 
 ## Téléchargement
 
-1. Cloner le repository : 
-```python
+Cloner le repository : 
+```git
 git clone https://github.com/Cafe-Soluble/departel.git
+cd Departel
 ```
-2. Aller dans le dossier du projet : 
-```cd Departel```
 
 ## Configuration de l'environnement
 
