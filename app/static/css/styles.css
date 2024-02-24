@@ -1,0 +1,27 @@
+.num-pad {
+    display: flex;
+    flex-wrap: wrap;
+    width: 132px; /* Ajustez cette largeur selon la taille souhaitée pour les boutons */
+}
+
+.key {
+    width: 40px; /* Largeur du bouton carré */
+    height: 40px; /* Hauteur pour rendre le bouton carré */
+    margin: 1px; /* Espacement entre les boutons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Couleur de fond des boutons */
+    cursor: pointer;
+    user-select: none; /* Empêche la sélection du texte dans le bouton */
+    border-radius: 5px;
+}
+
+.delete {
+    width: 82px; /* Largeur pour le bouton delete, équivalent à deux boutons plus l'espacement */
+}
+
+/* Style optionnel pour améliorer l'apparence lors du clic */
+.key:active {
+    background-color: #e0e0e0;
+}
