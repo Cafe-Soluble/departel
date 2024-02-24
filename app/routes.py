@@ -14,6 +14,20 @@ def resultat():
     form = NumeroForm()
     if form.validate_on_submit():
         numero_telephone = form.numero_telephone.data
-        departements = numero_vers_departements(numero_telephone)
+        raw_number = request.form['numero_telephone']
+        # Nettoie le numéro en enlevant tous les espaces
+        clean_number = raw_number.replace(' ', '')
+        departements = numero_vers_departements(clean_number)
         return render_template('resultat.html', departements=departements, numero_telephone=numero_telephone)
     return redirect(url_for('index'))
+
+
+
+@app.route('/some_route', methods=['POST'])
+def some_function():
+    # Supposons que 'numero_telephone' est le nom du champ dans votre formulaire
+    raw_number = request.form['numero_telephone']
+    # Nettoie le numéro en enlevant tous les espaces
+    clean_number = raw_number.replace(' ', '')
+    
+    # Utilisez `clean_number` pour vos traitements ultérieurs

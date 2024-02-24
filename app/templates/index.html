@@ -23,7 +23,7 @@
                 <div class="form-group">
                     {{ form.hidden_tag() }}
                     <label for="{{ form.numero_telephone.id }}">{{ form.numero_telephone.label.text }} : </label>
-                    {{ form.numero_telephone(class="form-control") }}
+                    {{ form.numero_telephone(class="form-control", id="numero_telephone") }}
                 </div>
                 <div class="row justify-content-center mb-3">
                     <!-- Clavier numérique -->
@@ -51,18 +51,39 @@
         </section>
     </main>
     <script>
+        document.getElementById("{{ form.numero_telephone.id }}").addEventListener('input', formatInputValue);
+    
         function pressKey(key) {
-            // Ajoute le chiffre au champ de numéro de téléphone
+            // Ajoute le chiffre au champ de numéro de téléphone et formate l'entrée
             var input = document.getElementById("{{ form.numero_telephone.id }}");
             input.value += key;
+            formatInputValueDirect(input); // Appelle la fonction de formatage directement avec l'input
         }
     
         function deleteKey() {
-            // Supprime le dernier chiffre du champ de numéro de téléphone
+            // Supprime le dernier caractère du champ de numéro de téléphone
             var input = document.getElementById("{{ form.numero_telephone.id }}");
-            input.value = input.value.slice(0, -1);
+            var value = input.value.replace(/\s/g, ''); // Enlève les espaces pour traiter la valeur brute
+            input.value = value.slice(0, -1); // Supprime le dernier chiffre
+            formatInputValueDirect(input); // Reformate l'entrée après suppression
+        }
+    
+        function formatInputValueDirect(input) {
+            // Formate la valeur actuelle de l'input pour ajouter des espaces tous les deux chiffres
+            var value = input.value.replace(/\s/g, ''); // Supprime d'abord tous les espaces existants
+            var formattedValue = '';
+            for (let i = 0; i < value.length; i += 2) {
+                formattedValue += value.substring(i, i + 2) + (i < value.length - 2 ? ' ' : '');
+            }
+            input.value = formattedValue; // Met à jour la valeur de l'input avec la nouvelle valeur formatée
+        }
+    
+        function formatInputValue(e) {
+            // Wrapper pour appeler formatInputValueDirect lors d'événements d'input
+            formatInputValueDirect(e.target);
         }
     </script>
+    
     <footer class="bg-dark text-white text-center py-3 mt-4">
         <div class="container">
             <p>&copy; 2024 Départel. Tous droits réservés.</p>
@@ -73,6 +94,29 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
+   <!-- Affichage espaces  -->
+
+   <script>
+    document.getElementById('numero_telephone').addEventListener('input', function(e) {
+        // Enlève les espaces précédents pour traiter la chaîne brute
+        let input = e.target.value.replace(/\s+/g, '');
+        let formattedInput = '';
+        
+        // Boucle ajoutant un espace tous les deux caractères
+        for (let i = 0; i < input.length; i++) {
+            if (i > 0 && i % 2 === 0) {
+                formattedInput += ' '; // Ajoute un espace
+            }
+            formattedInput += input[i];
+        }
+        
+        e.target.value = formattedInput; // Met à jour la valeur du champ avec le formatage
+    });
+    </script>
+    
+    
+    
     
 </body>
 </html>

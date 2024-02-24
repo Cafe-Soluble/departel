@@ -108,6 +108,20 @@ def numero_vers_departements(numero_telephone):
         '976': 'Mayotte',
     }
 
+    JOUEURS_NBA = {
+    0: "Russel Westbrook",
+    1: "Derrick Rose",
+    2: "Kawhi Leonard",
+    3: "Allen Iverson",
+    4: "Chris Webber",
+    5: "Jason Kidd",
+    6: "Lebron James",
+    7: "Carmelo Anthony",
+    8: "Kobe Bryant",
+    9: "Tony Parker"
+    }
+
+
     # Initialiser une liste pour stocker les départements correspondants
     departements_associes = []
     # Parcourir le numéro par pas de 2 chiffres
@@ -115,6 +129,14 @@ def numero_vers_departements(numero_telephone):
         # Extraire chaque paire de chiffres
         code = numero_telephone[i:i+2]
         # Trouver le département associé et l'ajouter à la liste, si trouvé
-        departement = DEPARTEMENTS.get(code, "Département inconnu")
+        departement = DEPARTEMENTS.get(code, "Département inconnu") + f' ({code})'
         departements_associes.append(departement)
+    # Vérifier si la longueur du numéro de téléphone est impaire
+    if len(numero_telephone) % 2 != 0:
+        # Traiter le dernier chiffre séparément
+        dernier_chiffre = int(numero_telephone[-1]) # Convertir en entier pour l'utiliser comme clé dans le dictionnaire
+        joueur_associe = JOUEURS_NBA.get(dernier_chiffre, "Joueur inconnu")
+        # Ajouter le nom du joueur associé à la liste avec le dernier chiffre
+        departements_associes.append(f'{joueur_associe} ({dernier_chiffre})')
+    print(departements_associes)
     return departements_associes
