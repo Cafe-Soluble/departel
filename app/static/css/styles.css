@@ -92,3 +92,7 @@ h3{
   .navbar-brand img {
     margin-right: 10px; /* Ajoute un peu d'espace entre l'image et le texte */
   }
+
+  .bg-dark{
+    background-color: #182532 !important;
+  }
