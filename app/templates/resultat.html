@@ -7,29 +7,38 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0c3e7b6922.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <h1>Départel</h1>
+        </div>
+    </header>
     <div class="container mt-5 content">
-        <header class="text-center mb-4">
-            <h1 class="h2">Résultats pour {{ numero_telephone }}</h1>
-        </header>
-        <main>
-            <section>
-                <h2>Liste des départements associés :</h2>
-                {% if departements %}
-                    <ul class="list-group">
-                        {% for departement in departements %}
-                            <li class="list-group-item">{{ departement }}</li>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    <p class="alert alert-warning">Aucun département associé trouvé.</p>
-                {% endif %}
-                <a href="{{ url_for('index') }}" class="btn btn-primary mt-3"><i class="fa-solid fa-house"></i> Retour à l'accueil</a>
-            </section>
-        </main>
+        <div class="container text-center">                
+            <h2>Résultats pour <strong style="white-space: nowrap;">{{ numero_telephone }}</strong></h2>
+        </div>
+        <div class="mt-4">                
+            <h3>Liste des départements associés :</h3>
+        </div>
+        {% if departements %}
+            <ul class="list-group">
+                {% for departement in departements %}
+                    <li class="list-group-item">{{ departement }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="alert alert-warning">Aucun département associé trouvé.</p>
+        {% endif %}
+        <div class="text-center">
+            <a href="{{ url_for('index') }}" class="btn btn-primary mt-3"><i class="fa-solid fa-house"></i> Retour à l'accueil</a>
+        </div>
+        
     </div>
     <footer class="text-center mt-4">
         <div class="container">

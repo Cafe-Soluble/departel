@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0c3e7b6922.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="bg-primary text-white py-3">
+    <header class="bg-dark text-white py-3">
         <div class="container">
-            <h1>Bienvenue sur Départel</h1>
+            <h1>Départel</h1>
         </div>
     </header>
     <div class="content">
@@ -27,9 +31,9 @@
                         <label for="{{ form.numero_telephone.id }}">{{ form.numero_telephone.label.text }} : </label>
                         {{ form.numero_telephone(class="form-control", id="numero_telephone") }}
                     </div>
-                    <div class="row justify-content-center mb-3">
+                    <div class="row justify-content-center mb-4">
                         <!-- Clavier numérique -->
-                        <div class="num-pad">
+                        <div class="num-pad mt-4">
                             <div class="key" onclick="pressKey('1')">1</div>
                             <div class="key" onclick="pressKey('2')">2</div>
                             <div class="key" onclick="pressKey('3')">3</div>
@@ -58,7 +62,7 @@
     
     <footer class="bg-dark text-white text-center py-3 mt-4">
         <div class="container">
-            <p>&copy; 2024 Départel. Tous droits réservés.</p>
+            <span>&copy; 2024 Départel. Tous droits réservés.</span>
         </div>
     </footer>
 

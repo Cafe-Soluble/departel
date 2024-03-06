@@ -6,6 +6,8 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    font-family: "Inria Sans", sans-serif;
+    background-color: #f5f5f5;
 }
 
 .content {
@@ -20,29 +22,40 @@ footer {
 .num-pad {
     display: flex;
     flex-wrap: wrap;
-    width: 190px; /* Ajustez cette largeur selon la taille souhaitée pour les boutons */
+    width: 240px; /* Ajustez cette largeur selon la taille souhaitée pour les boutons */
+    align-items: center;
+    justify-content: center;
 }
 
 .key {
-    width: 60px; /* Largeur du bouton carré */
-    height: 40px; /* Hauteur pour rendre le bouton carré */
+    width: 70px; /* Largeur du bouton carré */
+    height: 60px; /* Hauteur pour rendre le bouton carré */
     margin: 1px; /* Espacement entre les boutons */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0; /* Couleur de fond des boutons */
+    background-color: #dfdfdf; /* Couleur de fond des boutons */
     cursor: pointer;
     user-select: none; /* Empêche la sélection du texte dans le bouton */
     border-radius: 5px;
+    font-size: large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: font-size 0.1s ease;
+
+
 }
 
 .delete {
-    width: 122px; /* Largeur pour le bouton delete, équivalent à deux boutons plus l'espacement */
+    width: 142px; /* Largeur pour le bouton delete, équivalent à deux boutons plus l'espacement */
+
 }
 
 /* Style optionnel pour améliorer l'apparence lors du clic */
 .key:active {
-    background-color: #e0e0e0;
+    background-color: #b8b3b3;
+}
+.key:hover{
+    font-size: x-large;
 }
 
 
@@ -50,4 +63,23 @@ footer {
     position: absolute;
     pointer-events: none;
     color: black;
+}
+
+
+.form-control{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+h2{
+    font-size: 1.5rem;
+}
+
+h3{
+    font-size: 1.1rem;
+
+}
+.btn{
+
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
