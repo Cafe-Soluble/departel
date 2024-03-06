@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez rapidement le département français associé à n'importe quel numéro de téléphone avec notre outil de conversion en ligne. Facile, rapide et précis, notre service aide à identifier l'origine des appels pour une meilleure organisation et communication. Essayez-le dès maintenant !">
+    <meta name="description" content="Transformez facilement des numéros de téléphone en listes de départements français avec notre application web. Rapide et intuitive, elle associe les paires de chiffres à leurs départements correspondants. Idéale pour les passioné·e·s de départements. Et oui, ça existe !">
     <title>Départel - Convertisseur de numéro de téléphone en départements français</title>
     <link rel="icon" type="image/ico" href="{{ url_for('static', filename='departel_64.ico')}}">
     <!-- Intégration de Bootstrap CDN -->
@@ -21,7 +21,7 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
             <img src="{{ url_for('static', filename='logo_white_256.png')}}" width="64" height="64" class="d-inline-block align-top" alt="Logo Départel">
             <h1 class="d-inline-block mb-0">Départel</h1>
         </a>
