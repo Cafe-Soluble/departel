@@ -16,7 +16,7 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ url_for('index')}}">
             <img src="{{ url_for('static', filename='logo_white_256.png')}}" width="64" height="64" class="d-inline-block align-top" alt="Logo Départel">
             <h1 class="d-inline-block mb-0">Départel</h1>
         </a>
@@ -44,7 +44,7 @@
     </div>
     <footer class="text-center mt-4">
         <div class="container">
-            <p>&copy; 2024 Départel. Conçu avec amour pour Babe.</p>
+            <p>&copy; {{ now.year }} Départel. Conçu avec amour pour Babe.</p>
         </div>
     </footer>
     <!-- Intégration du JS de Bootstrap via CDN -->
