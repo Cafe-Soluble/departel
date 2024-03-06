@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Découvrez rapidement le département français associé à n'importe quel numéro de téléphone avec notre outil de conversion en ligne. Facile, rapide et précis, notre service aide à identifier l'origine des appels pour une meilleure organisation et communication. Essayez-le dès maintenant !">
     <title>Départel - Convertisseur de numéro de téléphone en départements français</title>
+    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='departel_64.ico')}}">
     <!-- Intégration de Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -16,11 +17,12 @@
     <script src="https://kit.fontawesome.com/0c3e7b6922.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="bg-dark text-white py-3">
-        <div class="container">
-            <h1>Départel</h1>
-        </div>
-    </header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='logo_white_256.png')}}" width="64" height="64" class="d-inline-block align-top" alt="Logo Départel">
+            <h1 class="d-inline-block mb-0">Départel</h1>
+        </a>
+    </nav>
     <div class="content">
         <main class="container mt-4">
             <section>
@@ -62,7 +64,7 @@
     
     <footer class="bg-dark text-white text-center py-3 mt-4">
         <div class="container">
-            <span>&copy; 2024 Départel. Tous droits réservés.</span>
+            <span>&copy; 2024 Départel. Conçu avec amour pour Babe.</span>
         </div>
     </footer>
 

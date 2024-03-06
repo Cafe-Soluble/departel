@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Résultat de Conversion - Départel</title>
+    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='departel_64.ico')}}">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -14,11 +15,12 @@
 
 </head>
 <body>
-    <header class="bg-dark text-white py-3">
-        <div class="container">
-            <h1>Départel</h1>
-        </div>
-    </header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='logo_white_256.png')}}" width="64" height="64" class="d-inline-block align-top" alt="Logo Départel">
+            <h1 class="d-inline-block mb-0">Départel</h1>
+        </a>
+    </nav>
     <div class="container mt-5 content">
         <div class="container text-center">                
             <h2>Résultats pour <strong style="white-space: nowrap;">{{ numero_telephone }}</strong></h2>
@@ -42,7 +44,7 @@
     </div>
     <footer class="text-center mt-4">
         <div class="container">
-            <p>&copy; 2024 Départel. Tous droits réservés.</p>
+            <p>&copy; 2024 Départel. Conçu avec amour pour Babe.</p>
         </div>
     </footer>
     <!-- Intégration du JS de Bootstrap via CDN -->

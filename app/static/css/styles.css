@@ -83,3 +83,12 @@ h3{
 
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Centre verticalement le contenu */
+  }
+
+  .navbar-brand img {
+    margin-right: 10px; /* Ajoute un peu d'espace entre l'image et le texte */
+  }
